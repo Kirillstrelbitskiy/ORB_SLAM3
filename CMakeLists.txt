@@ -23,7 +23,7 @@ else()
    message(FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++17 support. Please use a different C++ compiler.")
 endif()
 
-LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
+SET(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
 find_package(OpenCV 4.4)
    if(NOT OpenCV_FOUND)
@@ -121,6 +121,7 @@ ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
 
 #Stereo examples
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Stereo)
+
 
 add_executable(stereo_euroc
         Examples/Stereo/stereo_euroc.cc)
